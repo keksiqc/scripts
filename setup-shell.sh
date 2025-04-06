@@ -1,3 +1,7 @@
+# Prompt for Atuin key
+echo "Please enter your Atuin key:"
+read ATUIN_KEY
+
 # Check and install zsh
 echo "Checking zsh installation..."
 if ! command -v zsh &> /dev/null; then
@@ -43,7 +47,7 @@ zinit self-update
 
 # Configure atuin
 echo "Configuring atuin..."
-atuin login -u keksi --key "dose wasp buddy surround fault salon syrup book two direct snow speed feed staff hood first elder arrive silent master diet bulk dad remember"
+atuin login -u keksi --key "$ATUIN_KEY"
 atuin import auto
 atuin sync
 
