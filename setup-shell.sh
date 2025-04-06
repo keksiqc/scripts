@@ -37,8 +37,6 @@ fi
 echo "Loading zinit..."
 . "$HOME/.atuin/bin/env"
 
-eval "$(atuin init zsh)"
-
 # Update zinit
 echo "Updating zinit..."
 zinit self-update
