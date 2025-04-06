@@ -34,7 +34,7 @@ else
     echo "zinit is already installed"
 fi
 
-echo "Loading zinit..."
+echo "Loading atiuin..."
 . "$HOME/.atuin/bin/env"
 
 # Update zinit
@@ -50,6 +50,11 @@ atuin sync
 # Set up zsh configuration
 echo "Setting up zsh configuration..."
 echo '
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
@@ -66,6 +71,4 @@ echo "Changing default shell to zsh..."
 chsh -s $(which zsh) --quiet
 
 echo "✅ Setup complete! Shell has been changed to zsh. Please log out and log back in for changes to take effect."
-
-# Reload zsh
 exec zsh
