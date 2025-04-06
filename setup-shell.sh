@@ -68,7 +68,7 @@ eval "$(starship init zsh)"
 
 # Change default shell to zsh
 echo "Changing default shell to zsh..."
-chsh -s $(which zsh) --quiet
+chsh -s $(which zsh)
 
 echo "✅ Setup complete! Shell has been changed to zsh. Please log out and log back in for changes to take effect."
 exec zsh
