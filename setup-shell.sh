@@ -71,4 +71,7 @@ echo "Changing default shell to zsh..."
 chsh -s $(which zsh)
 
 echo "✅ Setup complete! Shell has been changed to zsh. Please log out and log back in for changes to take effect."
+echo "Please note: The first time you start zsh, zinit will download and install plugins."
+echo "This might take a moment. After that, your shell environment will be fully configured."
+echo "Starting zsh now..."
 exec zsh
