@@ -34,8 +34,10 @@ else
     echo "zinit is already installed"
 fi
 
-echo "Reloading zsh..."
-exec zsh
+echo "Loading zinit..."
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
 
 # Update zinit
 echo "Updating zinit..."
@@ -65,7 +67,7 @@ eval "$(starship init zsh)"
 echo "Changing default shell to zsh..."
 chsh -s $(which zsh) --quiet
 
+echo "✅ Setup complete! Shell has been changed to zsh. Please log out and log back in for changes to take effect."
+
 # Reload zsh
 exec zsh
-
-echo "✅ Setup complete! Shell has been changed to zsh. Please log out and log back in for changes to take effect."
